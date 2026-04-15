@@ -1,6 +1,6 @@
 {
   "name": "create-agentic-stack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "One brain, many harnesses. Drop a portable .agent/ folder into any project and plug it into Claude Code, Cursor, Windsurf, OpenCode, OpenClient, Hermes, or a DIY Python loop.",
   "license": "MIT",
   "author": "codejunkie99",
