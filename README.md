@@ -19,7 +19,7 @@ Based on the article:
 Every guide shows the folder structure. This repo gives you the folder
 structure **plus the files that actually go inside** — a working portable
 brain with five seed skills, four memory layers, enforced permissions, a
-nightly dream cycle, and adapters for six harnesses.
+nightly dream cycle, and adapters for seven harnesses.
 
 - **Memory** — `working/`, `episodic/`, `semantic/`, `personal/`. Each
   layer has its own retention policy. Salience-scored retrieval; nightly
