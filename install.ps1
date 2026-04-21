@@ -25,7 +25,7 @@ $Here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $ValidAdapters = @(
     'claude-code', 'cursor', 'windsurf',
     'opencode', 'openclaw', 'hermes',
-    'standalone-python', 'antigravity'
+    'standalone-python', 'antigravity', 'copilot'
 )
 if ($Adapter -notin $ValidAdapters) {
     Write-Error "unknown adapter '$Adapter'. valid: $($ValidAdapters -join ' ')"
@@ -77,6 +77,11 @@ switch ($Adapter) {
     }
     'antigravity' {
         Copy-Item (Join-Path $Src 'ANTIGRAVITY.md') (Join-Path $TargetDir 'ANTIGRAVITY.md') -Force
+    }
+    'copilot' {
+        $githubDir = Join-Path $TargetDir '.github'
+        New-Item -ItemType Directory -Path $githubDir -Force | Out-Null
+        Copy-Item (Join-Path $Src '.github/copilot-instructions.md') (Join-Path $githubDir 'copilot-instructions.md') -Force
     }
 }
 

@@ -13,7 +13,7 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 
 if [[ -z "$ADAPTER" ]]; then
   echo "usage: $0 <adapter-name> [target-dir]" >&2
-  echo "adapters: claude-code cursor windsurf opencode openclaw hermes pi standalone-python antigravity" >&2
+  echo "adapters: claude-code cursor windsurf opencode openclaw hermes pi standalone-python antigravity copilot" >&2
   exit 2
 fi
 
@@ -90,6 +90,10 @@ case "$ADAPTER" in
     ;;
   antigravity)
     cp "$SRC/ANTIGRAVITY.md" "$TARGET/ANTIGRAVITY.md"
+    ;;
+  copilot)
+    mkdir -p "$TARGET/.github"
+    cp "$SRC/.github/copilot-instructions.md" "$TARGET/.github/copilot-instructions.md"
     ;;
   *)
     echo "error: unknown adapter '$ADAPTER'" >&2
