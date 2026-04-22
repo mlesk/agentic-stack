@@ -2,7 +2,7 @@
 
 **Keep one portable memory-and-skills layer across coding-agent harnesses, so switching tools doesn't reset how your agent works.**
 
-A portable `.agent/` folder (memory + skills + protocols) that plugs into Claude Code, Cursor, Windsurf, OpenCode, OpenClaw, Hermes, Pi Coding Agent, or a DIY Python loop — and keeps its knowledge when you switch.
+A portable `.agent/` folder (memory + skills + protocols) that plugs into Claude Code, Cursor, Windsurf, OpenCode, OpenClaw, Hermes, Pi Coding Agent, GitHub Copilot, or a DIY Python loop — and keeps its knowledge when you switch.
 
 <p align="center">
   <img src="docs/demo.gif" alt="agentic-stack demo" width="880"/>
@@ -28,7 +28,7 @@ brew install agentic-stack
 # drop the brain into any project — the onboarding wizard runs automatically
 cd your-project
 agentic-stack claude-code
-# or: cursor | windsurf | opencode | openclaw | hermes | pi | standalone-python | antigravity
+# or: cursor | windsurf | opencode | openclaw | hermes | pi | standalone-python | antigravity | copilot
 ```
 
 ### Windows (PowerShell)
@@ -52,7 +52,7 @@ brew update && brew upgrade agentic-stack
 git clone https://github.com/codejunkie99/agentic-stack.git
 cd agentic-stack && ./install.sh claude-code         # mac / linux / git-bash
 # or on Windows PowerShell: .\install.ps1 claude-code
-# adapters: claude-code | cursor | windsurf | opencode | openclaw | hermes | pi | standalone-python | antigravity
+# adapters: claude-code | cursor | windsurf | opencode | openclaw | hermes | pi | standalone-python | antigravity | copilot
 ```
 
 ## Onboarding wizard
@@ -122,7 +122,7 @@ See [`docs/architecture.md`](docs/architecture.md) for the full lifecycle.
 Every guide shows the folder structure. This repo gives you the folder
 structure **plus the files that actually go inside**: a working portable
 brain with five seed skills, four memory layers, enforced permissions, a
-nightly staging cycle, host-agent review tools, and adapters for eight
+nightly staging cycle, host-agent review tools, and adapters for nine
 harnesses.
 
 - **Memory** — `working/`, `episodic/`, `semantic/`, `personal/`. Each
@@ -199,6 +199,7 @@ adapters/                       # one small shim per harness
 ├── pi/            (AGENTS.md + .pi/skills symlink)
 ├── standalone-python/  (DIY conductor entrypoint)
 └── antigravity/   (ANTIGRAVITY.md)
+└── copilot/       (.github/copilot-instructions.md)
 
 docs/                           # architecture, getting-started, per-harness
 install.sh                      # mac / linux / git-bash installer
@@ -227,6 +228,7 @@ verify_codex_fixes.py           # v0.8.0 regression checks (33 checks)
 | **Pi Coding Agent** | `AGENTS.md` + `.pi/skills/` | no (extension system) |
 | **Standalone Python** | `run.py` (any LLM) | yes (full control) |
 | **Antigravity** | `ANTIGRAVITY.md` | yes (system context) |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | no (manual reflect calls) |
 
 ## Seed skills
 
